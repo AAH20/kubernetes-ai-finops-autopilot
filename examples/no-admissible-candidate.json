@@ -1,0 +1,7 @@
+{
+  "metadata": {"scenario": "regulated-workload", "baseline": "underqualified", "currency": "USD"},
+  "workload": {"requests_per_hour": 1000, "tokens_per_request": 1200, "revenue_per_success": 0.04},
+  "constraints": {"max_p95_latency_ms": 800, "min_quality_score": 0.95, "min_availability": 0.999, "allowed_residencies": ["EU"]},
+  "candidates": [{"name": "underqualified", "provider": "Test", "hourly_cost": 5, "requests_per_hour": 2000, "success_rate": 0.98, "p95_latency_ms": 1600, "quality_score": 0.8, "gpu_utilization": 0.5, "carbon_g_per_hour": 100, "residency": "US", "availability": 0.99}],
+  "history": [900, 950, 1000]
+}

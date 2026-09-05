@@ -1,0 +1,15 @@
+image:
+  repository: ghcr.io/aah20/kubernetes-ai-finops-autopilot
+  tag: latest
+  pullPolicy: IfNotPresent
+
+mode: shadow
+schedule: "*/15 * * * *"
+evidenceConfigMap: ai-finops-evidence
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi

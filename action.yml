@@ -1,0 +1,20 @@
+name: Kubernetes AI FinOps Policy Gate
+description: Evaluate inference economics and fail when no candidate satisfies mandatory policies
+inputs:
+  evidence:
+    description: Path to normalized evidence JSON
+    required: true
+  output:
+    description: Output directory
+    required: false
+    default: generated/ai-finops
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        AI_FINOPS_EVIDENCE: ${{ inputs.evidence }}
+        AI_FINOPS_OUTPUT: ${{ inputs.output }}
+      run: |
+        python -m pip install "$GITHUB_ACTION_PATH"
+        ai-finops "$AI_FINOPS_EVIDENCE" --output "$AI_FINOPS_OUTPUT" --fail-on-policy

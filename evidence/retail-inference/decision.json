@@ -1,0 +1,121 @@
+{
+  "status": "RECOMMENDATION_READY",
+  "generated_at": "2026-09-05T01:10:18.573936+00:00",
+  "evidence_sha256": "55b79e8551c8fcdbc2e5f21271caaac2399d38b20d16435659901102b4fb3de5",
+  "forecast": {
+    "method": "ordinary_least_squares_trend",
+    "horizon_periods": 3,
+    "predicted_requests_per_hour": [
+      2591.43,
+      2702.86,
+      2814.29
+    ],
+    "trend_per_period": 111.43,
+    "backtest_mae": 10.61
+  },
+  "recommendation": {
+    "action": "propose_gitops_change",
+    "selected_candidate": "aks-nim-l40s-batched",
+    "baseline_candidate": "azure-openai-standard",
+    "projected_hourly_margin_delta": 15.448,
+    "projected_monthly_margin_delta": 11277.04,
+    "forecast_peak_rph": 2814.29,
+    "capacity_headroom_percent": 17.26,
+    "requires_human_approval": true,
+    "rollout": "10% canary, evaluate SLO and economics, then promote or roll back"
+  },
+  "candidates": [
+    {
+      "candidate": {
+        "name": "aks-nim-l40s-batched",
+        "provider": "AKS + NVIDIA NIM",
+        "hourly_cost": 15.8,
+        "requests_per_hour": 3300,
+        "success_rate": 0.982,
+        "p95_latency_ms": 1290,
+        "quality_score": 0.88,
+        "gpu_utilization": 0.79,
+        "carbon_g_per_hour": 420.0,
+        "residency": "EU",
+        "availability": 0.997
+      },
+      "economics": {
+        "successful_requests_per_hour": 2356.8,
+        "hourly_revenue": 82.488,
+        "hourly_margin": 66.688,
+        "margin_percent": 80.85,
+        "cost_per_success": 0.006704,
+        "revenue_per_success": 0.035,
+        "tokens_per_dollar": 268496.2
+      },
+      "policy": {
+        "admissible": true,
+        "failures": []
+      },
+      "optimization_score": 66.688
+    },
+    {
+      "candidate": {
+        "name": "azure-openai-standard",
+        "provider": "Azure OpenAI",
+        "hourly_cost": 31.5,
+        "requests_per_hour": 4000,
+        "success_rate": 0.985,
+        "p95_latency_ms": 1450,
+        "quality_score": 0.91,
+        "gpu_utilization": 0.0,
+        "carbon_g_per_hour": 0.0,
+        "residency": "EU",
+        "availability": 0.999
+      },
+      "economics": {
+        "successful_requests_per_hour": 2364.0,
+        "hourly_revenue": 82.74,
+        "hourly_margin": 51.24,
+        "margin_percent": 61.93,
+        "cost_per_success": 0.013325,
+        "revenue_per_success": 0.035,
+        "tokens_per_dollar": 135085.71
+      },
+      "policy": {
+        "admissible": true,
+        "failures": []
+      },
+      "optimization_score": 51.24
+    },
+    {
+      "candidate": {
+        "name": "cheap-public-api",
+        "provider": "External API",
+        "hourly_cost": 7.2,
+        "requests_per_hour": 5000,
+        "success_rate": 0.97,
+        "p95_latency_ms": 2300,
+        "quality_score": 0.82,
+        "gpu_utilization": 0.0,
+        "carbon_g_per_hour": 0.0,
+        "residency": "UNKNOWN",
+        "availability": 0.99
+      },
+      "economics": {
+        "successful_requests_per_hour": 2328.0,
+        "hourly_revenue": 81.48,
+        "hourly_margin": 74.28,
+        "margin_percent": 91.16,
+        "cost_per_success": 0.003093,
+        "revenue_per_success": 0.035,
+        "tokens_per_dollar": 582000.0
+      },
+      "policy": {
+        "admissible": false,
+        "failures": [
+          "p95_latency",
+          "quality",
+          "availability",
+          "data_residency"
+        ]
+      },
+      "optimization_score": -3999925.72
+    }
+  ]
+}

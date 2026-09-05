@@ -1,0 +1,7 @@
+# Generated proposal: human approval required
+aiFinops:
+  selectedCandidate: aks-nim-l40s-batched
+  mode: shadow
+  canaryPercent: 10
+  rollbackOnSloViolation: true
+  evidenceSha256: 55b79e8551c8fcdbc2e5f21271caaac2399d38b20d16435659901102b4fb3de5

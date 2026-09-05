@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "scenario": "retail-product-assistant",
+    "baseline": "azure-openai-standard",
+    "currency": "USD",
+    "period": "hour"
+  },
+  "workload": {
+    "requests_per_hour": 2400,
+    "tokens_per_request": 1800,
+    "revenue_per_success": 0.035
+  },
+  "constraints": {
+    "max_p95_latency_ms": 1800,
+    "min_quality_score": 0.86,
+    "min_availability": 0.995,
+    "allowed_residencies": ["EU", "GLOBAL"]
+  },
+  "candidates": [
+    {
+      "name": "azure-openai-standard",
+      "provider": "Azure OpenAI",
+      "hourly_cost": 31.5,
+      "requests_per_hour": 4000,
+      "success_rate": 0.985,
+      "p95_latency_ms": 1450,
+      "quality_score": 0.91,
+      "gpu_utilization": 0.0,
+      "carbon_g_per_hour": 0.0,
+      "residency": "EU",
+      "availability": 0.999
+    },
+    {
+      "name": "aks-nim-l40s-batched",
+      "provider": "AKS + NVIDIA NIM",
+      "hourly_cost": 15.8,
+      "requests_per_hour": 3300,
+      "success_rate": 0.982,
+      "p95_latency_ms": 1290,
+      "quality_score": 0.88,
+      "gpu_utilization": 0.79,
+      "carbon_g_per_hour": 420.0,
+      "residency": "EU",
+      "availability": 0.997
+    },
+    {
+      "name": "cheap-public-api",
+      "provider": "External API",
+      "hourly_cost": 7.2,
+      "requests_per_hour": 5000,
+      "success_rate": 0.97,
+      "p95_latency_ms": 2300,
+      "quality_score": 0.82,
+      "gpu_utilization": 0.0,
+      "carbon_g_per_hour": 0.0,
+      "residency": "UNKNOWN",
+      "availability": 0.99
+    }
+  ],
+  "history": [1800, 1930, 2050, 2130, 2260, 2380, 2470]
+}

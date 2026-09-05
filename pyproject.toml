@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kubernetes-ai-finops-autopilot"
+version = "0.1.0"
+description = "Evidence-driven AI inference economics and Kubernetes optimization engine"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Ahmed Hassan"}]
+keywords = ["kubernetes", "finops", "ai", "gpu", "aks", "llmops", "opencost"]
+
+[project.scripts]
+ai-finops = "ai_finops.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
