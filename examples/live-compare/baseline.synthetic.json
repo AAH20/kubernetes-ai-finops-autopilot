@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "provenance": "synthetic_fixture",
+  "workload_digest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "model": "Qwen/Qwen3-0.6B",
+  "requested": 100,
+  "succeeded": 100,
+  "failed": 0,
+  "concurrency": 4,
+  "duration_s": 100.0,
+  "successful_requests_per_s": 1.0,
+  "latency_p95_s": 1.5,
+  "ttft_p95_s": 0.8
+}

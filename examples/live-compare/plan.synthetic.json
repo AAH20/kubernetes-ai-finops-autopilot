@@ -1,0 +1,26 @@
+{
+  "service_id": "fictional-private-ai",
+  "namespace": "ai-services",
+  "route_name": "private-ai-route",
+  "gateway_name": "internal-gateway",
+  "hostname": "ai.example.invalid",
+  "baseline_service": "model-baseline",
+  "candidate_service": "model-candidate",
+  "service_port": 8000,
+  "costs": {
+    "baseline_hourly_usd": "2.00",
+    "candidate_hourly_usd": "2.00"
+  },
+  "quality": {
+    "suite_digest_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "baseline_score": 0.92,
+    "candidate_score": 0.92
+  },
+  "targets": {
+    "minimum_requests": 100,
+    "maximum_p95_latency_s": 2.0,
+    "maximum_p95_ttft_s": 1.0,
+    "minimum_quality_score": 0.90,
+    "minimum_cost_reduction_pct": 5.0
+  }
+}

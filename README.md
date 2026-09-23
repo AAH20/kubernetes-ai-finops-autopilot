@@ -6,6 +6,8 @@ This project converts demand, model quality, latency, availability, residency, c
 
 > Current release: a deterministic, offline decision engine and shadow-mode Helm workload. Live Prometheus, OpenCost, OpenTelemetry, Azure and NVIDIA collectors are roadmap work, not represented as implemented.
 
+The [measured inference comparison](docs/LIVE-INFERENCE-CANARY.md) adds a first operator-supplied benchmark path. It compares two `gifp-bench` reports, declared hourly cost and reviewed quality, then prepares a reversible Gateway API canary proposal if all gates pass. It does not collect cloud billing, route production traffic or verify a customer saving. The included case is fictional and remains on `HOLD`.
+
 ## The decision it makes
 
 ```mermaid
